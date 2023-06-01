@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!--css-->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+
+  <!--header-->
+  <header class="l-header" id="header">
+    <nav class="nav bd-container">
+      <img src = "assets/img/logo.svg" alt="Logo do site" />
+      
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+            <li class="nav__item"> <a href="#features" class="nav__link">Features</a> </li><img src="assets/img/caret-down.svg" id="dropdown" onclick="changeImage()" class="dropdown"/>
+            <div class="dropdown-content">
+              <a href="#"><img src="assets/img/icon-todo.svg" class="menu__dropdown"/>Todo List</a>
+              <a href="#"><img src="assets/img/icon-calendar.svg" class="menu__dropdown"/>Calendar</a>
+              <a href="#"><img src="assets/img/icon-reminders.svg" class="menu__dropdown"/>Reminders</a>
+              <a href="#"><img src="assets/img/icon-planning.svg" class="menu__dropdown"/>Planning</a>
+            </div>
+            <li class="nav__item"> <a href="#company" class="nav__link">Company</a></li><img src="assets/img/caret-down.svg" id="dropdown2" onclick="mudarImage()" class="dropdown"/>
+            <div class="dropdown-content2">
+              <a href="#"  class="menu__dropdown">History</a>
+              <a href="#" class="menu__dropdown">Our Team</a>
+              <a href="#" class="menu__dropdown">Blog</a>
+            </div>
+            <li class="nav__item"> <a href="#careers" class="nav__link">Careers</a></li>
+            <li class="nav__item"> <a href="#about" class="nav__link">About</a></li>
+            <li class="nav__item"> <a href="#login" id="login" class="nav__link">Login</a></li>
+            <li class="nav__item"> <a href="#register" id="register" class="nav__link"> Register</a></li>
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+
+  <!--main-->
+  <main>
+    <section class="home" id="home">
+      <div class="home__container bd-container2 bd-grid">
+        <div class="home__data">
+          <h1 class="home__title">Make<br>remote work</h1>
+          <p class="home__subtitle">  Get your team in sync, no matter your location.<br> Streamline processes, create team rituals, and<br> watch productivity soar.</p>
+          <a href="#learnmore" class="button">Learn more</a>
+          <br>
+          <img src="assets/img/client-databiz.svg" class="footer"/>
+          <img src="assets/img/client-audiophile.svg" class="footer__image"/>
+          <img src="assets/img/client-meet.svg" class="footer__image"/>
+          <img src="assets/img/client-maker.svg" class="footer__image"/>
+        </div>
+
+        <img src="assets/img/home.png" alt="home page" class="home__img">
+
+      </div>
+    </section>
+
+
+  </main>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">João Bagvanji Júnior</a>.
+  </div>
+</body>
+
+</html>
+<script>
+  $(document).ready(function() {
+    $('#dropdown').click(function() {
+      $('.dropdown-content').toggle();
+    });
+  });
+  function changeImage() {
+    var dropdownImage = document.getElementById('dropdown');
+    
+    if (dropdownImage.src.includes('caret-down.svg')) {
+      dropdownImage.src = 'assets/img/caret-up.svg';
+    } else {
+      dropdownImage.src = 'assets/img/caret-down.svg';
+    }
+  }
+
+</script>
+<script>
+  $(document).ready(function() {
+    $('#dropdown2').click(function() {
+      $('.dropdown-content2').toggle();
+    });
+  });
+  function mudarImage() {
+    var dropdownImage = document.getElementById('dropdown2');
+    
+    if (dropdownImage.src.includes('caret-down.svg')) {
+      dropdownImage.src = 'assets/img/caret-up.svg';
+    } else {
+      dropdownImage.src = 'assets/img/caret-down.svg';
+    }
+  }
+</script>
